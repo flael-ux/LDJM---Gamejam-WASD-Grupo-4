@@ -18,9 +18,6 @@ public class Cena4Evento1 : MonoBehaviour
     [SerializeField] GameObject botaoProx;
     [SerializeField] int eventPos = 0;
     [SerializeField] GameObject charName;
-    [SerializeField] GameObject botaoop1;
-    [SerializeField] GameObject botaoop2;
-    [SerializeField] GameObject botaoop3;
     [SerializeField] GameObject fadeOut;
 
     void Start()
