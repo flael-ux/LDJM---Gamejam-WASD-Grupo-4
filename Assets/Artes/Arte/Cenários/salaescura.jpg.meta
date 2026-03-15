@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 1f8146997dae02e47bf5c770474f3980
+guid: 0cff1d35d44025348b4fcd5e2b8ead0f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8756422853792614032
-    second: mGD Raiva_0
+      213: 5110750680444713158
+    second: salaescura_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mGD Raiva_0
+      name: salaescura_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 680
-        height: 688
+        width: 3744
+        height: 5616
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 096cb672130158970800000000000000
-      internalID: 8756422853792614032
+      spriteID: 6c83e7b7aa80de640800000000000000
+      internalID: 5110750680444713158
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      mGD Raiva_0: 8756422853792614032
+      salaescura_0: 5110750680444713158
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

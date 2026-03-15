@@ -1,6 +1,4 @@
 using System.Collections;
-using Unity.AppUI.UI;
-using Unity.VectorGraphics.Editor;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;

@@ -1,6 +1,4 @@
 using System.Collections;
-using Unity.AppUI.UI;
-using Unity.VectorGraphics.Editor;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +7,7 @@ public class Cena02Evento : MonoBehaviour
 {
     public GameObject caixaTexto;
     [SerializeField] GameObject fadeSreenIn;
+    [SerializeField] AudioSource musicaCena;
     [SerializeField] GameObject corredorEfeitoMateo;
     [SerializeField] GameObject corredorEfeitoGab;
     [SerializeField] GameObject charMateo;
@@ -42,6 +41,7 @@ public class Cena02Evento : MonoBehaviour
         //evento 1
         yield return new WaitForSeconds(2);
         fadeSreenIn.SetActive(false);
+        musicaCena.Play();
         yield return new WaitForSeconds(2);
         charMateo.SetActive(true);
         yield return new WaitForSeconds(2);
