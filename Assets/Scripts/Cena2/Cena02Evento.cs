@@ -3,6 +3,7 @@ using Unity.AppUI.UI;
 using Unity.VectorGraphics.Editor;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Cena02Evento : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class Cena02Evento : MonoBehaviour
     [SerializeField] GameObject botaoProx;
     [SerializeField] int eventPos = 0;
     [SerializeField] GameObject charName;
+    [SerializeField] GameObject botaoop1;
+    [SerializeField] GameObject botaoop2;
+    [SerializeField] GameObject botaoop3;
     [SerializeField] GameObject fadeOut;
 
 
@@ -44,6 +48,7 @@ public class Cena02Evento : MonoBehaviour
         charMateoFala.SetActive(true);
         corredorEfeitoMateo.SetActive(true);
         mainTextObject.SetActive(true);
+        caixaTexto.SetActive(true);
         charName.GetComponent<TMPro.TMP_Text>().text = "Mateo";
         textToSpeak = "(Encostado na parede) — Você tá falando sério? Onde foi que você ouviu isso? Se for mais uma dessas teorias de fórum da internet, Gabe...";
         caixaTexto.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
@@ -256,7 +261,124 @@ public class Cena02Evento : MonoBehaviour
 
     }
 
-    //fazer evento 11 de escolha de fala de gabriel.
+    IEnumerator Escolha01()
+    {
+        //evento escolha 1
+        corredorEfeitoMateo.SetActive(false);
+        botaoProx.SetActive(false);
+        caixaTexto.SetActive(true);
+        charName.GetComponent<TMPro.TMP_Text>().text = "Gabriel";
+        textToSpeak = "";
+        caixaTexto.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        CriadordeTexto.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(() => textLength == currentTextLength);
+        yield return new WaitForSeconds(0.5f);
+        botaoop1.SetActive(true);
+        botaoop2.SetActive(true);  
+        botaoop3.SetActive(true);
+
+    }
+
+    public void Escolha010p1()
+    {
+        StartCoroutine(Escolha01Op1());
+    }
+
+    public void Escolha010p2()
+    {
+        StartCoroutine(Escolha01Op2());
+    }
+
+    public void Escolha010p3()
+    {
+        StartCoroutine(Escolha01Op3());
+    }
+
+    IEnumerator Escolha01Op1()
+    {
+        //opção 1 da escolha 1
+        botaoProx.SetActive(false);
+        botaoop1.SetActive(false);
+        botaoop2.SetActive(false);  
+        botaoop3.SetActive(false);
+        caixaTexto.SetActive(true);
+        corredorEfeitoGab.SetActive(true);
+        
+        charName.GetComponent<TMPro.TMP_Text>().text = "Gabriel";
+        textToSpeak = "Ele é o único que me deu uma pista real em anos. Preciso acreditar em algo.(Você escolheu um caminho desesperado)";
+        caixaTexto.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        CriadordeTexto.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(() => textLength == currentTextLength);
+        yield return new WaitForSeconds(0.5f);
+        botaoProx.SetActive(true);
+        eventPos = 12;
+
+    }
+
+    IEnumerator Escolha01Op2()
+    {
+        //opção 2 da escolha 1
+        botaoProx.SetActive(false);
+        botaoop1.SetActive(false);
+        botaoop2.SetActive(false);  
+        botaoop3.SetActive(false);
+        caixaTexto.SetActive(true);
+        corredorEfeitoGab.SetActive(true);
+        
+        charName.GetComponent<TMPro.TMP_Text>().text = "Gabriel";
+        textToSpeak = "Eu também não confio nele. Mas ele é a isca, e eu vou morder até descobrir quem está segurando a vara.(Você escolheu um caminho mais estratérico.)";
+        caixaTexto.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        CriadordeTexto.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(() => textLength == currentTextLength);
+        yield return new WaitForSeconds(0.5f);
+        botaoProx.SetActive(true);
+        eventPos = 12;
+
+    }
+
+    IEnumerator Escolha01Op3()
+    {
+        //opção 3 da escolha 1
+        botaoProx.SetActive(false);
+        botaoop1.SetActive(false);
+        botaoop2.SetActive(false);  
+        botaoop3.SetActive(false);
+        caixaTexto.SetActive(true);
+        corredorEfeitoGab.SetActive(true);
+        
+        charName.GetComponent<TMPro.TMP_Text>().text = "Gabriel";
+        textToSpeak = "Não importa o que ele é. O que importa é onde esse teste vai me levar. Você vem ou não?(Você escolheu um caminho focado apenas no objetivo final.)";
+        caixaTexto.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        CriadordeTexto.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(() => textLength == currentTextLength);
+        yield return new WaitForSeconds(0.5f);
+        botaoProx.SetActive(true);
+        eventPos = 12;
+
+    }
+
+    IEnumerator Evento12()
+    {
+        //evento 12
+        botaoProx.SetActive(false);
+        caixaTexto.SetActive(true);
+        fadeOut.SetActive(true);
+        yield return new WaitForSeconds(4);
+        eventPos = 13;
+        SceneManager.LoadScene("Cena4");
+    }
 
     public void ProxEvento()
     {
@@ -295,6 +417,14 @@ public class Cena02Evento : MonoBehaviour
         if (eventPos == 10)
         {
             StartCoroutine(Evento10());
+        }
+        if (eventPos == 11)
+        {
+            StartCoroutine(Escolha01());
+        }
+         if (eventPos == 12)
+        {
+            StartCoroutine(Evento12());
         }
     }
 }
